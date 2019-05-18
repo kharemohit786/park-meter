@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS `slot_availability` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `location_name` VARCHAR(256) NULL DEFAULT NULL,
+  `used_slot` VARCHAR(256) DEFAULT NULL,
+  `vehicle_type` VARCHAR(8) DEFAULT NULL,
+  `created_db_time` BIGINT(12) NULL DEFAULT NULL,
+  `last_modified_db_time` BIGINT(12) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `IdIndex` (`id` ASC) VISIBLE)
+ENGINE = InnoDB
+AUTO_INCREMENT = 7
+DEFAULT CHARACTER SET = latin1;
+
+CREATE TABLE IF NOT EXISTS `parking_vehicle_details` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `slot_availibility_id` BIGINT(20) NULL DEFAULT NULL,
+  `license_plate` VARCHAR(256) DEFAULT NULL,
+  `userid` INT(10) NULL DEFAULT NULL,
+  `is_parked` INT(1) NULL DEFAULT 0,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 7
+DEFAULT CHARACTER SET = latin1;
